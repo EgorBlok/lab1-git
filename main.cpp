@@ -13,6 +13,9 @@ double haToM2(double ha) {
 double m2ToHa(double m2) {
     return m2 / 10000;
 }
+double haToSotka(double ha) {
+    return ha * 100;
+}
 
 // ===== Главная функция: меню =====
 int main() {
@@ -24,6 +27,7 @@ int main() {
         cout << "\n=== Вариант 74: перевод единиц площади ===\n";
         cout << "1. Гектары -> m2\n";
         cout << "2. m2 -> гектары\n";
+        cout << "3. Гектары -> сотки\n";
         cout << "0. Выход\n";
         cout << "Выберите пункт: ";
         cin >> choice;
@@ -45,6 +49,15 @@ int main() {
                     break;
                 }
                 cout << a << " м2 = " << m2ToHa(a) << " гектаров\n";
+                break;
+             case 3:
+                cout << "Введите площадь в гектарах: ";
+                cin >> a;
+                if (a < 0) {
+                    cout << "Площадь не может быть отрицательной.\n";
+                    break;
+                }
+                cout << a << " гектаров = " << haToSotka(a) << " соток\n";
                 break;
             case 0:
                 cout << "Работа завершена.\n";
